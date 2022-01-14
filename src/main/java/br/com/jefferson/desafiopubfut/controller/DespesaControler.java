@@ -1,8 +1,6 @@
 package br.com.jefferson.desafiopubfut.controller;
 
 import java.net.URI;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;

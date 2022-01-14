@@ -19,8 +19,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 import br.com.jefferson.desafiopubfut.repository.ContaRepository;
 import br.com.jefferson.desafiopubfut.service.ContaService;
-import br.com.jefferson.desafiopubfut.service.Transferencia;
-import br.com.jefferson.desafiopubfut.enumerador.EErros;
+import br.com.jefferson.desafiopubfut.dto.Transferencia;
 import br.com.jefferson.desafiopubfut.exeption.ErrosException;
 import br.com.jefferson.desafiopubfut.models.Conta;
 

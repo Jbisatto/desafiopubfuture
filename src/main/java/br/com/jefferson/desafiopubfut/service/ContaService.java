@@ -7,6 +7,7 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import br.com.jefferson.desafiopubfut.dto.Transferencia;
 import br.com.jefferson.desafiopubfut.enumerador.EErros;
 import br.com.jefferson.desafiopubfut.exeption.ErrosException;
 import br.com.jefferson.desafiopubfut.models.Conta;

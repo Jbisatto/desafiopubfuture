@@ -1,4 +1,4 @@
-package br.com.jefferson.desafiopubfut.service;
+package br.com.jefferson.desafiopubfut.dto;
 
 
 public class Transferencia {
