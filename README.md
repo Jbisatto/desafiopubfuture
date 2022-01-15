@@ -1,92 +1,227 @@
-# Controle de Finanças
+# Controle de Finanças 
 
-Projeto para Controle de Finanças usando o conceito REST API criada usando Spring Boot e Spring Data JPA com banco de dados Mysql. Esse projeto faz parte e um desafio da Pub  Future onde o que foi priorizado nesse projeto foi o back-end.
+  
 
-## Requirementos
+Projeto para Controle de Finanças com o conceito de uma REST API, desenvolvida utilizando Spring Boot, Spring Data JPA, Swagger com banco de dados MySQL. Este projeto faz parte e um desafio da Pub Future onde foco é testar os conhecimentos em back-end.  
 
-1. Maven
+  
 
-2. Java
+## Ferramentas para o Desenvolvimento 
 
-3. Banco de dados Mysql
+  
+
+1. IDE Eclipse 
+
+  
+
+2. Spring Initializr 
+
+  
+
+3. MySql WorkBenck 
+
+  
 
 4. Postman 
 
-
-## Configuração
-
-**1. Clonar a aplicação**
-
-```bash
-git clone https://github.com/Jbisatto/desafiopubfuture.git
-```
-**2. Executar o projeto no Maven**
-
-Dentro da pasta principal do projeto abra um terminal de comando e execute os seguites comandos:
-```bash
-mvnw install
-```
-Após a instação das dependência execute o camando:
-
-```bash
-java -jar target/desafiopubfut-0.0.1-SNAPSHOT.jar
-```
-
-### Banco de dados
-**3. Criar no Mysql um banco de dados com o nome _desafioPubFuture_**
-
-```bash
-create database desafiopubfuture;
-```
-
-**4. Utilize o script MySQL contido no arquivo _data.sql_ para criar e popular o banco de dados**
-
-  `src/main/resources/data.sql`
   
-**5. Configuração de login do Mysql:**
 
-+ abrir `src/main/resources/application.properties`
+## Frameworks Utilizados 
 
-+ altere `spring.datasource.username` e `spring.datasource.password`  de acordo com a instalação do seu Mysql
+  
+
+1. Spring Boot 
+
+  
+
+2. Spring Data JPA 
+
+  
+
+3. Swagger 
+
+  
+
+**Testes Unitário** 
+
+  
+
+4. JUnit 
 
 
-## Funcionalidade
-Como o projeto foi feita apenas o back-end, para testar suas funcionalidade foi usado o Postman. O projeto apresenta as seguintes funções (click em cada uma delas para obter mais informações):
+## Requerimentos 
 
+  
 
-### Receitas
+1. Maven 
 
-*  [Cadastrar receitas](https://github.com/Jbisatto/desafiopubfuture/blob/master/docs/Receitas/CadastrarReceita.md)
+  
 
-*  [Editar receitas](https://github.com/Jbisatto/desafiopubfuture/blob/master/docs/Receitas/EditarReceita.md)
+2. Java 
 
-*  [Remover receitas](https://github.com/Jbisatto/desafiopubfuture/blob/master/docs/Receitas/DeletarReceita.md)
+  
 
-*  [Listar receitas](https://github.com/Jbisatto/desafiopubfuture/blob/master/docs/Receitas/ListarReceita.md)
-  >*  [Filtro por período (dataInicial – dataFinal)](https://github.com/Jbisatto/desafiopubfuture/blob/master/docs/Receitas/FiltroDataReceita.md)
-  >*  [Filtro por tipo de receita](https://github.com/Jbisatto/desafiopubfuture/blob/master/docs/Receitas/FiltroTipoReceita.md)
+3. Banco de dados Mysql 
 
-*  [Listar total de receitas](https://github.com/Jbisatto/desafiopubfuture/blob/master/docs/Receitas/ListarTotalReceita.md)
+  
+  
 
-### Despesas
+## Configuração 
 
-* [Cadastrar despesas](https://github.com/Jbisatto/desafiopubfuture/blob/master/docs/Despesas/CadastrarDespesa.md)
+  
 
-*  [Editar despesas](https://github.com/Jbisatto/desafiopubfuture/blob/master/docs/Despesas/EditarDespesa.md)
+**1. Clonar a aplicação** 
 
-*  [Remover despesas](https://github.com/Jbisatto/desafiopubfuture/blob/master/docs/Despesas/DeletarDespesa.md)
+  
 
-*  [Listar despesas](https://github.com/Jbisatto/desafiopubfuture/blob/master/docs/Despesas/ListarDespesa.md)
-  >*  [Filtro por período (dataInicial – dataFinal)](https://github.com/Jbisatto/desafiopubfuture/blob/master/docs/Despesas/FiltroData.md)
- >*  [Filtro por tipo de despesa](https://github.com/Jbisatto/desafiopubfuture/blob/master/docs/Despesas/FiltroTipoDespesa.md)
+```bash 
 
-*  [Listar total de despesas](https://github.com/Jbisatto/desafiopubfuture/blob/master/docs/Despesas/ListarTotalDespesa.md)
+git clone https://github.com/Jbisatto/desafiopubfuture.git 
 
-### Contas
-*  [Cadastrar conta](https://github.com/Jbisatto/desafiopubfuture/blob/master/docs/Conta/CadastrarConta.md)
-*  [Editar conta](https://github.com/Jbisatto/desafiopubfuture/blob/master/docs/Conta/EditarConta.md)
-*  [Remover conta](https://github.com/Jbisatto/desafiopubfuture/blob/master/docs/Conta/DeletarConta.md)
-*  [Listar contas](https://github.com/Jbisatto/desafiopubfuture/blob/master/docs/Conta/ListarConta.md)
-*  [Transferir saldo entre contas](https://github.com/Jbisatto/desafiopubfuture/blob/master/docs/Conta/TransfereSaldoConta.md)
-*  [Listar saldo total](https://github.com/Jbisatto/desafiopubfuture/blob/master/docs/Conta/ListarSaldo.md)
+``` 
 
+**2. Executar o projeto no Maven** 
+
+  
+
+Dentro da pasta principal do projeto abra um terminal de comando e execute os seguintes comandos: 
+
+```bash 
+
+mvnw install 
+
+``` 
+
+Após a instalação das dependência execute o comando:  
+
+  
+
+```bash 
+
+java -jar target/desafiopubfut-0.0.1-SNAPSHOT.jar 
+
+``` 
+
+  
+
+**Banco de dados** 
+
+  
+
+**3. Utilize o script MySQL contido no arquivo _data.sql_ para criar e popular o banco de dados** 
+
+  
+
+  `src/main/resources/data.sql` 
+
+   
+
+**4. Configuração de login do MySQL:** 
+
+  
+
++ abrir `src/main/resources/application.properties` 
+
+  
+
++ altere `spring.datasource.username` e `spring.datasource.password`  de acordo com a instalação do seu MySQL 
+
+  
+
+  
+
+## Funcionalidade 
+
+  
+
+### Receitas 
+
+  
+
+*  Cadastrar receitas 
+
+*  Editar receitas 
+
+  
+
+*  Remover receitas 
+
+  
+
+*  Listar receitas 
+
+  >*  Filtro por período (dataInicial – dataFinal) 
+
+  >*  Filtro por tipo de receita 
+
+  
+
+*  Listar total de receitas 
+
+  
+
+### Despesas 
+
+  
+
+* Cadastrar despesas 
+
+  
+
+*  Editar despesas 
+
+  
+
+*  Remover despesas 
+
+  
+
+*  Listar despesas 
+
+  >*  Filtro por período (dataInicial – dataFinal) 
+
+  >*  Filtro por tipo de despesa 
+
+  
+
+*  Listar total de despesas 
+
+  
+
+### Contas 
+
+*  Cadastrar conta 
+
+*  Editar conta 
+
+*  Remover conta 
+
+*  Listar contas 
+
+*  Transferir saldo entre contas 
+
+*  Listar saldo total 
+
+  
+
+## Documentação 
+
+No projeto foi utilizado uma ferramenta OpenAPI. Quando a aplicação estiver rodando insira o seguinte endereço no browser: 
+
+```bash 
+
+http://localhost:8080/pubFuture.html 
+
+``` 
+
+![](https://github.com/Jbisatto/desafiopubfuture/blob/master/docs/telaPrincipal.png) 
+
+![](https://github.com/Jbisatto/desafiopubfuture/blob/master/docs/telaPrincipal3.png) 
+
+![](https://github.com/Jbisatto/desafiopubfuture/blob/master/docs/telaPrincipal2.png) 
+
+  
+
+## Modelagem de dados 
+
+![](https://github.com/Jbisatto/desafiopubfuture/blob/master/docs/ModelagemDADOS.png) 
