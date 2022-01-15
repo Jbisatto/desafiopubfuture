@@ -19,9 +19,12 @@ import br.com.jefferson.desafiopubfut.models.Receita;
 
 import br.com.jefferson.desafiopubfut.repository.ReceitaRepository;
 import br.com.jefferson.desafiopubfut.service.ReceitaService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 
 @RestController
 @RequestMapping(value = "/receita")
+@Tag(name = "Receita")
 public class ReceitaController {
 
 	@Autowired
@@ -29,21 +32,24 @@ public class ReceitaController {
 	@Autowired
 	ReceitaService receitaService;
 
-	@GetMapping // http://localhost:8080/receita
+	@GetMapping
+	@Operation(summary = "Listar receitas")
 	public List<Receita> buscaListaContas() {
 
 		return receitaService.buscarReceitas();
 
 	}
 
-	@GetMapping("/{id}") // http://localhost:8080/receita/1
+	@GetMapping("/{id}") 
+	@Operation(summary = "Listar uma receita")
 	public Receita buscaReceita(@PathVariable(value = "id") long id) {
 
 		return receitaService.buscarReceitaID(id);
 
 	}
 
-	@PostMapping // http://localhost:8080/receita/
+	@PostMapping
+	@Operation(summary = "Cadastrar receitas")
 	public ResponseEntity<Receita> salva(@RequestBody Receita receita, UriComponentsBuilder uriBuldier) {
 
 		receita = receitaService.salvar(receita);
@@ -52,7 +58,8 @@ public class ReceitaController {
 
 	}
 
-	@DeleteMapping // http://localhost:8080/receita/
+	@DeleteMapping
+	@Operation(summary = "Remover receitas")
 	public void deletaReceita(@RequestBody Receita receita) {
 
 		receitaService.deletar(receita);
@@ -60,7 +67,8 @@ public class ReceitaController {
 
 	}
 
-	@PutMapping // http://localhost:8080/receita/
+	@PutMapping
+	@Operation(summary = "Editar receitas")
 	public ResponseEntity<Receita> atualizaReceita(@RequestBody Receita receita, UriComponentsBuilder uriBuldier) {
 
 		receita = receitaService.atualizar(receita);
@@ -68,20 +76,23 @@ public class ReceitaController {
 		return ResponseEntity.created(uri).body(receita);
 	}
 
-	@GetMapping("/tipoReceita") // http://localhost:8080/receita/tipoReceita?tipo=SALARIO
+	@GetMapping("/tipoReceita")
+	@Operation(summary = "Listar por tipo de receita")
 	public List<Receita> buscaReceitaTipo(String tipo) {
 		
 		return receitaService.buscarTipo(tipo);
 
 	}
 
-	@GetMapping("/totalReceitas") // http://localhost:8080/receita/totalReceitas
+	@GetMapping("/totalReceitas")
+	@Operation(summary = "Listar total de receitas")
 	public double totalReceitas() {
 		
 		return receitaService.saldo();
 	}
 
-	@GetMapping("/data") // http://localhost:8080/receita/data?inicial=09/01/2021&fim=10/01/2021
+	@GetMapping("/data")
+	@Operation(summary = "Listar por período( dataInicial - dataFinal)")
 	public List<Receita> buscaReceitaData(String inicial, String fim) {
 		
 		return receitaService.buscarPorData(inicial, fim);

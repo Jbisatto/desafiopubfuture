@@ -1,3 +1,7 @@
+create database desafiopubfuture;
+
+use desafiopubfuture;
+
 create table tb_conta(
 	id_conta bigint primary key auto_increment,
     saldo double,

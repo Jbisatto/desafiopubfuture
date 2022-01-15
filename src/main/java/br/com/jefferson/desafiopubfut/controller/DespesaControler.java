@@ -18,9 +18,12 @@ import org.springframework.web.util.UriComponentsBuilder;
 import br.com.jefferson.desafiopubfut.models.Despesa;
 import br.com.jefferson.desafiopubfut.repository.DespesaRepository;
 import br.com.jefferson.desafiopubfut.service.DespesaService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 
 @RestController
 @RequestMapping(value = "/despesa")
+@Tag(name = "Despesa")
 public class DespesaControler {
 
 	@Autowired
@@ -28,21 +31,24 @@ public class DespesaControler {
 	@Autowired
 	DespesaService despesaService;
 
-	@GetMapping // http://localhost:8080/despesa
+	@GetMapping
+	@Operation(summary = "Listar despesas")
 	public List<Despesa> buscaListaDespesa() {
 
 		return despesaService.buscarDespesas();
 
 	}
 
-	@GetMapping("/{id}") // http://localhost:8080/despesa/1
+	@GetMapping("/{id}")
+	@Operation(summary = "Listar uma despesa")
 	public Despesa buscaDespesa(@PathVariable(value = "id") long id) {
 
 		return despesaService.buscarDespesaId(id);
 
 	}
 
-	@PostMapping // http://localhost:8080/despesa
+	@PostMapping
+	@Operation(summary = "Cadastrar despesas")
 	public ResponseEntity<Despesa> salva(@RequestBody Despesa despesa, UriComponentsBuilder uriBuldier) {
 
 		despesa = despesaService.salvar(despesa);
@@ -51,7 +57,8 @@ public class DespesaControler {
 
 	}
 
-	@DeleteMapping // http://localhost:8080/despesa
+	@DeleteMapping
+	@Operation(summary = "Remover Despesas")
 	public void deletaDespesa(@RequestBody Despesa despesa) {
 
 		despesaService.deletar(despesa);
@@ -60,7 +67,8 @@ public class DespesaControler {
 
 	}
 
-	@PutMapping // http://localhost:8080/despesa
+	@PutMapping
+	@Operation(summary = "Editar despesas")
 	public ResponseEntity<Despesa> atualizaDespesa(@RequestBody Despesa despesa, UriComponentsBuilder uriBuldier) {
 
 		despesa = despesaService.atualizar(despesa);
@@ -68,19 +76,22 @@ public class DespesaControler {
 		return ResponseEntity.created(uri).body(despesa);
 	}
 
-	@GetMapping("/tipoDespesa") // http://localhost:8080/despesa/tipoDespesa?tipo=ALIMENTACAO
+	@GetMapping("/tipoDespesa")
+	@Operation(summary = "Listar por tipo de despesa")
 	public List<Despesa> buscaDespesaTipo(String tipo) {
 
 		return despesaService.buscarTipo(tipo);
 
 	}
 
-	@GetMapping("/totalDespesa") // http://localhost:8080/despesa/totalDespesa
+	@GetMapping("/totalDespesa")
+	@Operation(summary = "Listar total de despesas")
 	public double totalDespesa() {
 		return despesaService.saldo();
 	}
 
-	@GetMapping("/data") // http://localhost:8080/despesa/data?inicial=09/07/2021&fim=10/10/2021
+	@GetMapping("/data")
+	@Operation(summary = "Listar por período ( dataInicial - dataFinal)")
 	public List<Despesa> buscaDespesaData(String inicial, String fim) {
 		return despesaService.buscarPorData(inicial, fim);
 
