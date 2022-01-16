@@ -24,24 +24,34 @@ public class Conta implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id_conta;
-	
+
 	@NotNull
 	@DecimalMin(value = "0.01")
 	private double saldo;
-	
+
 	@NotNull
 	@Enumerated(EnumType.STRING)
 	private EConta tipoConta;
-	
+
 	@NotEmpty
 	private String instFinanceira;
 
 	public Conta() {
-		
+
 	}
-	public Conta( @NotNull @DecimalMin("0.01") double saldo, @NotNull EConta tipoConta,
+
+	public Conta(@NotNull @DecimalMin("0.01") double saldo, @NotNull EConta tipoConta,
 			@NotEmpty String instFinanceira) {
 		super();
+		this.saldo = saldo;
+		this.tipoConta = tipoConta;
+		this.instFinanceira = instFinanceira;
+	}
+
+	public Conta(long id_conta, @NotNull @DecimalMin("0.01") double saldo, @NotNull EConta tipoConta,
+			@NotEmpty String instFinanceira) {
+		super();
+		this.id_conta = id_conta;
 		this.saldo = saldo;
 		this.tipoConta = tipoConta;
 		this.instFinanceira = instFinanceira;
