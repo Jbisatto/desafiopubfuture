@@ -26,7 +26,7 @@ Projeto para Controle de Finanças com o conceito de uma REST API, desenvolvida 
 
   
 
-## Frameworks Utilizados 
+## Frameworks e bibliotecas utilizadas 
 
   
 
@@ -47,6 +47,8 @@ Projeto para Controle de Finanças com o conceito de uma REST API, desenvolvida 
   
 
 4. JUnit 
+
+5. Mockito
 
 
 ## Requerimentos 
@@ -92,7 +94,7 @@ mvnw install
 
 ``` 
 
-Após a instalação das dependência execute o comando:  
+Após a instalação das dependências execute o comando:   
 
   
 
@@ -225,3 +227,7 @@ http://localhost:8080/pubFuture.html
 ## Modelagem de dados 
 
 ![](https://github.com/Jbisatto/desafiopubfuture/blob/master/docs/ModelagemDADOS.png) 
+
+## Testes unitários 
+
+![](https://github.com/Jbisatto/desafiopubfuture/blob/master/docs/TesteUnitario.png)
